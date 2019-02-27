@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>인서트 완료</title>
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/form.css.css">
+
 </head>
 <body>
 <h1>인서트 결과</h1>
