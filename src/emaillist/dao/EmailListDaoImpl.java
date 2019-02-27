@@ -66,13 +66,13 @@ public class EmailListDaoImpl extends BaseDao implements EmailListDao {
 
         try {
             conn = getConnection();
-            String sql = "INSERT INTO emaillist VALUES(?,?,?,?,?)";
+            String sql = "INSERT INTO emaillist VALUES(seq_emaillist_pk.nextval,?,?,?,sysdate)";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setLong(1, vo.getNo());
-            pstmt.setString(2, vo.getLastName());
-            pstmt.setString(3, vo.getFirstName());
-            pstmt.setString(4, vo.getEmail());
-            pstmt.setDate(5,vo.getCreatedAt());
+//            pstmt.setLong(1, vo.getNo());
+            pstmt.setString(1, vo.getLastName());
+            pstmt.setString(2, vo.getFirstName());
+            pstmt.setString(3, vo.getEmail());
+//            pstmt.setDate(5,vo.getCreatedAt());
 
             insertedCount = pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -92,12 +92,40 @@ public class EmailListDaoImpl extends BaseDao implements EmailListDao {
             }
         }
 
-        return insertedCount==1;
+        return insertedCount == 1;
     }
 
     @Override
-    public boolean delete(Long id) {
-        return false;
+    public boolean delete(Long no) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        int insertedCount = 0; // 삽입된 row 수
+
+        try {
+            conn = getConnection();
+            String sql = "DELETE FROM emaillist WHERE no = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setLong(1, no);
+
+            insertedCount = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("SQL Error!");
+            System.err.println("ERROR : " + e.getMessage());
+        } finally {
+            try {
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("SQL Error!");
+                System.err.println("ERROR : " + e.getMessage());
+            }
+        }
+
+        return insertedCount == 1;
     }
 
     @Override

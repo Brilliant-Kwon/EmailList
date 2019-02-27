@@ -10,7 +10,7 @@ public interface EmailListDao {
 
     public boolean insert(EmailVo vo);
 
-    public boolean delete(Long id);
+    public boolean delete(Long no);
 
     public boolean search(String name);
     

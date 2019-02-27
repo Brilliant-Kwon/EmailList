@@ -18,3 +18,8 @@
 .list_item th {
     background: #CCCCCC;
 }
+
+.toolbar input[type=submit] {
+    width: 100px;
+    float: right;
+}

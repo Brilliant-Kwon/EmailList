@@ -19,6 +19,7 @@
 <head>
     <title>메일링 리스트</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/form.js"></script>
 </head>
 <body>
 <%
@@ -53,26 +54,24 @@
                 <td><%=vo.getEmail()%>
                 </td>
             </tr>
+            <tr class="toolbar">
+                <td colspan="2">
+                    <%--삭제를 위한 폼 --%>
+                    <form method="post" action="<%=request.getContextPath()%>/delete.jsp"
+                          onsubmit="return delete_email(this)">
+                        <input type="hidden" name="no" value="<%= vo.getNo()%>">
+                        <input type="submit" value="삭제">
+                    </form>
+                </td>
+            </tr>
         </table>
 
         <%}%>
 
     </div>
     <div class="footer">
-        <a href="">추가 이메일 등록"</a>
+        <a href="<%=request.getContextPath()%>/form.jsp">추가 이메일 등록</a>
     </div>
 </div>
-
-
-<h2>삽입</h2>
-<form method="post" action="insert.jsp">
-    <label for="last_name"></label>
-    <input type="text" name="last_name" placeholder="성을 입력하세요."><br>
-    <input type="text" name="first_name" placeholder="이름을 입력하세요."><br>
-    <input type="text" name="email" placeholder="이메일을 입력하세요."><br>
-
-    <input type="submit" value="전송">
-    <input type="reset" value="리셋"><br>
-</form>
 </body>
 </html>
