@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="JAX-WS-Apache Axis">
+    <archive path="C:/Users/k1212/bitacademy/EmailList1/lib/commons-discovery-0.2.jar" />
+    <archive path="C:/Users/k1212/bitacademy/EmailList1/lib/saaj.jar" />
+    <archive path="C:/Users/k1212/bitacademy/EmailList1/lib/commons-logging-1.0.4.jar" />
+    <archive path="C:/Users/k1212/bitacademy/EmailList1/lib/wsdl4j-1.5.1.jar" />
+    <archive path="C:/Users/k1212/bitacademy/EmailList1/lib/jaxrpc.jar" />
+    <archive path="C:/Users/k1212/bitacademy/EmailList1/lib/axis.jar" />
+    <archive path="C:/Users/k1212/bitacademy/EmailList1/lib/log4j-1.2.8.jar" />
+  </library>
+</eclipse-userlibraries>
+

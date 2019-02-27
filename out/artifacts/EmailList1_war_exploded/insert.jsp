@@ -48,7 +48,7 @@
 
     if (success) { //리스트 출력
         System.out.println(request.getContextPath());
-        response.sendRedirect(request.getContextPath());//리스트 화면으로 돌려보냄
+        response.sendRedirect(request.getContextPath()+"/");//리스트 화면으로 돌려보냄
     } else { //오류메시지 출력
 %>
 <%--<p><%=request.getParameter("last_name")%><%=request.getParameter("first_name")%> 의 이메일 추가에 실패하였습니다.</p>--%>
@@ -58,10 +58,3 @@
 
     }
 %>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-</body>
-</html>
