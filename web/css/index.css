@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/*공통 css 로드*/
+@import "main.css";
+
+/*테이블 스타일*/
+.list_item {
+    border: 1px solid;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.list_item tr, .list_item th, .list_item td {
+    border: 1px solid;
+    padding: 5px 5px;
+}
+
+.list_item th {
+    background: #CCCCCC;
+}

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/*기본값 초기화*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "맑은 고딕", "돋움";
+    font-size: 1em; /*16px 가변 크기*/
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+div#container {
+    width: 640px;
+    margin: 10px auto;
+}
