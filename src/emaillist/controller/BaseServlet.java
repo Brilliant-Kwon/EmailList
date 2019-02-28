@@ -16,7 +16,5 @@ public abstract class BaseServlet extends HttpServlet {
         ServletContext context = getServletContext();
         dbUser = context.getInitParameter("dbUser");
         dbPass = context.getInitParameter("dbPass");
-
-
     }
 }
